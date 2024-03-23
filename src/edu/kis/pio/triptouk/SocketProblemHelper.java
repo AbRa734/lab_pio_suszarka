@@ -9,7 +9,10 @@ public class SocketProblemHelper {
 		
 		// describe the steps our friend needs to take in order 
 		// to connect an european device (device parameter) into a UK socket (socket parameter)
-		
+		Adapter adapter = new Adapter(socket.getVoltsSupplied());
+
+		adapter.getPlug().plugIntoUKSocket(socket);
+		device.getPlug().plugIntoEuropeanSocket(adapter);
 	}
 	
 }
